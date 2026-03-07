@@ -46,6 +46,12 @@ public class SearchPageDetails extends basePage {
 
     @FindBy(css = ".pdp-add-to-wishlist.pdp-button.pdp-add-to-wishlist.pdp-button.pdp-flex.pdp-center")
     private WebElement addToWishlistBtn;
+    
+    @FindBy(xpath = "//span[@class='size-buttons-size-error-message']")
+    private WebElement sizeErrorMessage;
+    
+    @FindBy(xpath = "//body/div[@id='desktop-headerMount']/div/div[1]")
+    private WebElement addedToBagPopup;
 
    
 
@@ -105,5 +111,13 @@ public class SearchPageDetails extends basePage {
 
     public void clickAddToWishlist() {
         addToWishlistBtn.click();
+    }
+    
+    public String getSizeErrorMessageText() {
+        return sizeErrorMessage.getText();
+    }
+    
+    public String getAddedToBagText() {
+        return addedToBagPopup.getText();
     }
 }
